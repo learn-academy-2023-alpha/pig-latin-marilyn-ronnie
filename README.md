@@ -52,6 +52,45 @@ Oday ouyay eakspay igpay atinlay? If you are scratching your head at that statem
 - Can hit the submit button
 - Can see the words that begin with a vowel translated to Pig Latin and rendered to the page (e.g. appleway)
 
+for (let i = 0; i < arrayOfUserInput.length; i++) {
+     if (eachWord[i].includes(vowelsArray)){
+      return eachWord + "way"
+    }}
+
+if the inputed word at the index of 0.includesVowelsArray add string (Maybe.concat) + way
+Either going to .concatWay or .split to convert to an array then do .push to add way to the end of the array and then .join to convert it back to string
+
+nputing an array of strings and we want to
+output an array of strings translated to pig latin then convert the array using .join to one string
+Each word needs to be its own index.
+
+Psuedo code:
+-user inputs a phrase of english words (string)
+-use const arrayOfUserInput = userInput.split(" ") to turn phrase into an array of words
+-iterate over the array using .map 
+-use conditional statement if to compare vowelsArray and eachWord[0] to check if the first letter of each string includes a vowel or not
+-if the word does start with a vowel, return the word with "way" added to the end
+
+const arrayOfUserInput = ["apple", "through", "queen", "squeal", "fry", "fluent"]
+
+const vowelsArray = eachWord.split("").filter(vowel => {
+        return (
+          vowel === "a" || 
+          vowel === "e" || 
+          vowel === "i" || 
+          vowel === "o" || 
+          vowel === "u"
+        )
+      })
+
+
+  // const firstVowelIndex = eachWord.indexOf(vowelsArray[0]);
+  // const pigLatinWord = eachWord.slice(firstVowelIndex) + consonants + "way";
+  // return pigLatinWord;
+
+
+
+
 **Story 2: In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have "qu" in the first syllable translated by moving all the consonant and the "u" to the end and add "ay".**
 
 **Branch:** qu-functionality
@@ -75,6 +114,16 @@ Oday ouyay eakspay igpay atinlay? If you are scratching your head at that statem
 **Story 4: In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have one or more consonants translated by moving all the consonant to the end and add "ay".**
 
 **Branch:** consonant-functionality
+
+
+ for (let i = 0; i < eachWord.length; i++) {
+          if (vowelsArray.includes(eachWord[i])) {
+      // Move consonants before the first vowel to the end of the word and add "ay"
+      const firstVowelIndex = eachWord.indexOf(vowelsArray[0]);
+      const consonants = eachWord.slice(0, firstVowelIndex);
+      const pigLatinWord = eachWord.slice(firstVowelIndex) + consonants + "ay";
+      return pigLatinWord;
+    }
 
 **Acceptance Criteria**
 
