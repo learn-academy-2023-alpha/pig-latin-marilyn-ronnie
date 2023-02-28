@@ -33,11 +33,23 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
-    
+      // Psuedo code:
+      // -user inputs a phrase of english words (string)
+      // -use const arrayOfUserInput = userInput.split(" ") to turn phrase into an array of words
+      // -iterate over the array using .map 
+      // -use conditional statement if to compare vowelsArray and eachWord[0] to check if the first letter of each string includes a vowel or not
+      // -if the word does start with a vowel, return the word with "way" added to the end
+     
+      let pigLatinWord = "";
 
+        if(vowelsArray.indexOf(eachWord[0]) > -1) {
+          pigLatinWord = eachWord + "way";  
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
-      return eachWord
-    })
+      return pigLatinWord
+    }
+  })
+
+//  output should be:   ["appleway", "through", "queen", "squeal", "fry", "fluent"]
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
     const translatedWords = translatedWordsArray.join(" ")
